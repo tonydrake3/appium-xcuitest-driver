@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "appium-base-driver": "^3.0.0",
+    "appium-base-driver": "appium/appium-base-driver#isaac-bluebird",
     "appium-ios-driver": "^4.0.0",
     "appium-ios-simulator": "^3.9.0",
     "appium-remote-debugger": "^4.0.0",
