@@ -34,6 +34,8 @@ gulp.task('e2e-test:parallel', function runParallelTests () {
     env: process.env,
   };
 
+  console.log(process.env);
+
   let tests = argv.tests;
   tests = Array.isArray(tests) ? tests : [tests];
   tests = _.map(tests, (test) => `${path.resolve(__dirname, 'build', 'test', test)}/*.js`);
