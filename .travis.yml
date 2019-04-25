@@ -189,7 +189,7 @@ install:
     else
       npm install --production;
       npm install --no-save gulp appium-gulp-plugins chai chai-as-promised chai-subset wd unzip mocha mocha-parallel-tests;
-      npm install --no-save saucelabs;
+      npm install --no-save saucelabs spawn-mocha-parallel;
       npx gulp fix-mocha-parallel-tests;
       npm run build;
       npx gulp periodic-output & export LONG_PID=$!;
