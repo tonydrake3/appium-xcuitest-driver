@@ -44,7 +44,7 @@ jobs:
     #   env: CI_METRICS=1 PLATFORM_VERSION=11.4 TEST=functional/web
 
     - stage: "[CRON] Upload Appium build to Sauce Storage"
-      # if: type = cron
+      if: type = cron
       os: linux
       env: CLOUD=1
       script: npx gulp sauce-storage-upload
@@ -188,9 +188,8 @@ install:
       popd;
     else
       npm install --production;
-      npm install --no-save gulp appium-gulp-plugins chai chai-as-promised chai-subset wd unzip mocha mocha-parallel-tests;
+      npm install --no-save gulp appium-gulp-plugins chai chai-as-promised chai-subset wd unzip mocha;
       npm install --no-save saucelabs spawn-mocha-parallel;
-      npx gulp fix-mocha-parallel-tests;
       npm run build;
       npx gulp periodic-output & export LONG_PID=$!;
     fi

@@ -23,9 +23,10 @@ boilerplate({
 gulp.task('e2e-test:parallel', function runParallelTests () {
   const opts = {
     flags: {
-      u: 'bdd-with-opts',
+      // u: 'bdd-with-opts',
       R: 'spec',
       c: true,
+      recursive: true,
     },
     exit: true,
     bin: path.join(__dirname, 'node_modules', '.bin', 'mocha'),
@@ -35,8 +36,7 @@ gulp.task('e2e-test:parallel', function runParallelTests () {
 
   let tests = argv.tests;
   tests = Array.isArray(tests) ? tests : [tests];
-  tests = _.map(tests, (test) => path.resolve(__dirname, 'build', 'test', test));
-
+  tests = _.map(tests, (test) => `${path.resolve(__dirname, 'build', 'test', test)}/*.js`);
   return gulp.src(tests, {read: false})
     .pipe(gulpIf(true, debug()))
     .pipe(mochaStream(opts))
