@@ -5,6 +5,7 @@ import { util } from 'appium-support';
 import patchDriverWithEvents from './ci-metrics';
 import SauceLabs from 'saucelabs';
 import B from 'bluebird';
+import '../env/env';
 
 
 const {SAUCE_RDC, SAUCE_EMUSIM, CLOUD, CI_METRICS} = process.env;
