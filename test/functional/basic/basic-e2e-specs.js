@@ -25,7 +25,7 @@ describe('XCUITestDriver - basics -', function () {
   });
 
   describe('status -', function () {
-    it('should get the server status', async function () {
+    it.only('should get the server status', async function () {
       let status = await driver.status();
       if (process.env.SAUCE_EMUSIM) {
         status.build.version.should.equal('Sauce Labs');
