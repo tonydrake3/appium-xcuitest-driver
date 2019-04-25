@@ -134,6 +134,9 @@ async function initSession (caps) {
     }
   }
 
+  console.log('\n\n\nSESSION CREATION:', HOST, PORT);
+  console.log(JSON.stringify(caps, null, 2));
+
   await initDriver();
 
   if (process.env.USE_WEBDRIVERAGENTURL) {
