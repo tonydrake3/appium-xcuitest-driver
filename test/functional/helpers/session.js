@@ -16,6 +16,7 @@ if (CI_METRICS) {
 }
 
 function getPort () {
+  console.log('\n\n\n\n\nGETTING THE PORT', SAUCE_EMUSIM, SAUCE_RDC);
   if (SAUCE_EMUSIM || SAUCE_RDC) {
     return 80;
   }
